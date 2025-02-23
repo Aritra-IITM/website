@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
   setTimeout(() => {
       preloader.style.display = "none"; // Hide preloader
       mainContent.style.display = "block"; // Show main content
-  }, 500); // 3000 milliseconds = 3 seconds
+  }, 100); // 3000 milliseconds = 3 seconds
     });
 
 

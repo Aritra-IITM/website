@@ -178,10 +178,35 @@ h2, h3, h4, h5, h6, p {
 }
 
 .contact {
-  background-image: url(contents/Background/contact.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('contents/Background/contact.webp') center/cover no-repeat;
+}
+
+.container {
+  display: flex;
+  width: 120%;
+  height: auto;
+  padding: 0px;
+  margin: 50px 0;
+  align-items: top;
+}
+
+.img-cont {
+  display: flex;
+  width: 60%;
+  height: inherit;
+  padding: 0 10px;
+  align-items: center;
+}
+
+.img-cont img{
+  width: 100%;
+  height: auto;
+}
+.text-cont {
+  width: 40%;
+  height: inherit;
+  padding: 0 10px;
+  align-items: baseline;
 }
 /*--------------------------------------------------------------
 # Sections General
@@ -200,8 +225,6 @@ section {
 section .home {
   height: 100px;
 }
-
-
 
 
 .section-title {
@@ -233,9 +256,6 @@ section .home {
   pointer-events: none; /* Avoid interaction with the background text */
 }
 
-#about .section-title h2 {
-  color: #071527;
-}
 
 .section-title p {
   font-size: 50px;
@@ -264,7 +284,6 @@ section .home {
   text-shadow: 2px 2px 1px black;
 }
 .section-main, .section-title {
-
 }
 .section-main.animate {
   animation: fade 2s ease-in-out;
@@ -308,7 +327,7 @@ section .home {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #3264af;
+  background: #101d3d;
   z-index: 9999;
 }
 
@@ -663,12 +682,6 @@ section .home {
   font-size: 26px;
 }
 
-.about {
-  background-image: url(contents/Background/about.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
 
 /*--------------------------------------------------------------
@@ -735,18 +748,16 @@ section .home {
   align-items: center;
 }
 
-.achievements{
-  background-image: url(contents/Background/journey.png);
+.achievements {
+  background-image: url(contents/Background/journey.webp);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .competitions {
-  background-image: url(contents/Background/comp.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('contents/Background/comp.webp') center/cover no-repeat;
+
 }
 
 .achievements .section-title h2{
@@ -929,3 +940,4 @@ section .home {
     transform: scale(1) translateZ(0%); 
   }
 }
+

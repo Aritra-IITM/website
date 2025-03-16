@@ -29,8 +29,8 @@ h2, h3, h4, h5, h6, p {
   max-width: 100%;
   display: flex;
   position: relative;
-  top: auto;
-  left: auto;
+  top: 0%;
+  left: -5%;
   justify-items: center;
   align-items: center;
   perspective: 1000px;
@@ -94,8 +94,6 @@ h2, h3, h4, h5, h6, p {
   align-items: center;
 
 }
-
-
 
 .spon-box img{
   width: auto;
@@ -256,6 +254,18 @@ section .home {
   pointer-events: none; /* Avoid interaction with the background text */
 }
 
+.section-title h3 {
+  font-size: 90px;
+  font-family: 'Vast Shadow', Times; /* Apply Oxanium font */
+  opacity: 0.75;
+  position: relative;
+  top: 0%;
+  left: 50%;
+  color: #3264af;
+  transform: translate(-50%, -100%);
+  z-index: 1; /* Ensure it stays behind the paragraph */
+  pointer-events: none; /* Avoid interaction with the background text */
+}
 
 .section-title p {
   font-size: 50px;
@@ -283,8 +293,7 @@ section .home {
   color: #fff;
   text-shadow: 2px 2px 1px black;
 }
-.section-main, .section-title {
-}
+
 .section-main.animate {
   animation: fade 2s ease-in-out;
   visibility: visible;
@@ -418,6 +427,12 @@ section .home {
   padding: 10px 60px;
 }
 
+#header .name {
+  height: 75px;
+  width: auto;
+  padding: 10px 60px;
+}
+
 #header a {
   color: #fff;
   text-decoration: none;
@@ -431,15 +446,10 @@ section .home {
 
 .row-header {
   display: flex;
-  justify-content: flex-start;
+  justify-items: flex-start;
   align-items: center;
 }
 
-@media (max-width: 992px) {
-  #header .logo {
-    font-size: 28px;
-  }
-}
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -470,12 +480,8 @@ section .home {
   font-family:  "Georgia", 'Times New Roman', Times, serif;;
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   color: #3264af;
-}
-
-#active a {
-  color: #0099f8;
 }
 
 .nav-menu .drop-down ul {
@@ -558,14 +564,24 @@ section .home {
     content: "\ea9d";
   }
 }
-
-
-/* Mobile Navigation */
-.mobile-nav-toggle {
+#mobile-nav-toggle {
+  all: unset; /* Resets button styles */
   position: fixed;
   top: 23px;
-  right: 15px;
-  z-index: 9998;
+  right: 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: none;
+  border: none;
+  padding: 5px;
+  visibility: hidden;
+}
+
+#mobile-nav-toggle i{
   border: 0;
   background: none;
   font-size: 24px;
@@ -574,26 +590,23 @@ section .home {
   line-height: 1;
   cursor: pointer;
   text-align: right;
+  color: #fff;
 }
 
-.mobile-nav-toggle i {
-  color: #071527;
+#mobile-nav-toggle i {
+  color: #fff;
 }
-
 .mobile-nav {
+  display: none;
+  background: #071527;
+  color: white;
   position: fixed;
   top: 55px;
   right: 15px;
-  bottom: 15px;
   left: 15px;
-  z-index: 9999;
-  overflow-y: auto;
-  background: #071527;
-  transition: ease-in-out 0.2s;
-  opacity: 0;
-  visibility: hidden;
+  padding: 20px;
   border-radius: 10px;
-  padding: 10px 0;
+  z-index: 9999;
 }
 
 .mobile-nav * {
@@ -611,15 +624,11 @@ section .home {
   outline: none;
 }
 
-.mobile-nav a:hover, .mobile-nav li:hover > a {
-  color: #3264af;
+.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+  color: #fff;
   text-decoration: none;
 }
 
-.mobile-nav .active > a {
-  color: #071527;
-  text-decoration: none;
-}
 
 .mobile-nav .drop-down > a:after {
   content: "\ea99";
@@ -658,20 +667,6 @@ section .home {
   display: none;
   transition: ease-in-out 0.2s;
 }
-
-.mobile-nav-active {
-  overflow: hidden;
-}
-
-.mobile-nav-active .mobile-nav {
-  opacity: 1;
-  visibility: visible;
-}
-
-.mobile-nav-active .mobile-nav-toggle i {
-  color: #fff;
-}
-
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
@@ -764,21 +759,9 @@ section .home {
   color: #0099f8;
 }
 
-@media (max-width: 1024px) {
-  .our_achievements .content, .our_achievements .accordion-list {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
 
-@media (max-width: 992px) {
-  .our_achievements .content {
-    padding-top: 30px;
-  }
-  .our_achievements .accordion-list {
-    padding-bottom: 30px;
-  }
-}
+
+
 
 @-webkit-keyframes pulsate-btn {
   0% {
@@ -805,10 +788,6 @@ section .home {
 /*--------------------------------------------------------------
 # Sponsors
 --------------------------------------------------------------*/
-
-.sponsors .img-box {
-
-}
 .sponsors .img-box.animate {
   animation: enlarge 0.8s ease-in-out ;
   visibility: visible;
@@ -895,9 +874,6 @@ section .home {
   width: 340px;
   height: 340px;
 }
-.team #right, #left, #center {
-
-}
 
 .team #right.animate {
   animation: slide-right 0.8s ease-in-out ;
@@ -938,6 +914,178 @@ section .home {
   }
   100% {
     transform: scale(1) translateZ(0%); 
+  }
+}
+
+/*--------------------------------------------------------------
+# Mobile view
+--------------------------------------------------------------*/
+
+@media (max-width: 992px) {
+  #header .logo{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    height: 40px;
+    width: auto;
+    padding: 5px;
+  }
+
+  #header .name{
+    height: 40px;
+    width: auto;
+    padding: 5px;
+  }
+
+  #header{
+    display: flex;
+    justify-content: center;
+    opacity: 1.0;
+  }
+
+  .nav-menu{
+    display: none;
+  }
+
+  #mobile-nav-toggle{
+    visibility: visible;
+  }
+  .body {
+    width: 100%;
+  }  
+
+  .section {
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .section-title {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .section-title img{
+    width: 250px;
+  }
+
+  .section-title h2 {
+    font-size: 25px;
+  }
+
+  .section-title h3 {
+    font-size: 25px
+  }
+
+  .section-title p{
+    font-size: 20px;
+  }
+
+  .section-main{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .section-main h2 {
+    font-size: 25px;
+  }
+
+  .section-main p{
+    font-size: 12px;
+  }
+
+  .video-bg{
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-bg video {
+    width: 100%;
+    height: 600px;
+  }
+
+  .home {
+    height: 500px;
+    max-height: 600px;
+    min-height: 0;
+  }
+
+  .about .container{
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .about .section-title h3{
+    top: 100px;
+  }
+
+  .section-title h2{
+    top: 50px;
+  }
+  .img-cont{
+    width: 100%;
+  }
+  .text-cont{
+    width: 100%;
+  }
+
+  .achievements{
+    background-size: contain;
+    background-position: top;
+    min-height: 400px;
+  }
+
+  .image-container{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    transform: translateX(100px);
+    transform: translateY(500px);
+  }
+
+  .sponsors{
+    max-height: max-content;
+    height: max-content;
+  }
+
+  .contact{
+    max-height: none;
+    height: max-content;
+  } 
+
+  .competitions{
+    height: max-content;
+  }
+  .img-container{
+    flex-direction: column;
+    height: fit-content;
+    left: 0%;
+  }
+  
+  .info-box{
+    height: fit-content;
+    max-height: max-content;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .info-box h3{
+    font-size: 24px;
+  }
+  .info-box i{
+    font-size: 30px;
+  }
+  
+  .spon-box{
+    height: fit-content;
+  }
+  .spon-box img{
+    width: auto;
+    height: 200px;
   }
 }
 

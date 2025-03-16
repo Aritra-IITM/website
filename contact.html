@@ -37,21 +37,31 @@
       <div class="row-header">
   
         <a href="index.html"><img src="contents/logo/logo_header.png" alt="" class="logo"></a>
-        <a href="index.html"><img src="contents/logo/font.png" alt="" class="logo"></a>
+        <a href="index.html"><img src="contents/logo/font.png" alt="" class="name"></a>
   
         <nav class="nav-menu">
           <ul>
-            <li class="active"><a href="index.html" alt="home">HOME</a></li>
-            <li><a href="competitions.html">COMPETiTIONS</a></li>
-            <li><a href="prev_sponsors.html">PREVIOUS SPONSORS</a></li>
+            <li class="active"><a href="index.html" aria-label="HOME">HOME</a></li>
+            <li><a href="competitions.html" aria-label="COMPETiTIONS">COMPETITIONS</a></li>
+            <li><a href="prev_sponsors.html" aria-label="PREVIOUS SPONSORS">PREVIOUS SPONSORS</a></li>
             <!-- <li><a href="team.html">TEAM</a></li> -->
-            <li><a href="contact.html">CONTACT US</a></li>
-
-  
+            <li><a href="contact.html" aria-label="CONTACT US">CONTACT US</a></li>
+          </ul>
+          
+        </nav><!-- .nav-menu -->
+        <button id="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
+        <nav class="mobile-nav">
+          <ul>
+            <li class="active"><a href="index.html" aria-label="HOME">HOME</a></li>
+            <li><a href="competitions.html" aria-label="COMPETiTIONS">COMPETITIONS</a></li>
+            <li><a href="prev_sponsors.html" aria-label="PREVIOUS SPONSORS">PREVIOUS SPONSORS</a></li>
+            <!-- <li><a href="team.html">TEAM</a></li> -->
+            <li><a href="contact.html" aria-label="CONTACT US">CONTACT US</a></li>
           </ul>
         </nav><!-- .nav-menu -->
       </div>
     </header><!-- End Header -->
+    
     <main>
             <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -100,5 +110,7 @@
         </div>
       </section><!-- End Contact Section -->
     </main>
+      <!-- Template Main JS File -->
+  <script src="script.js" defer></script>
 </body>
 </html>
